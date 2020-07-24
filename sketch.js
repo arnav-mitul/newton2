@@ -19,10 +19,10 @@ function setup() {
     bob2= new ball(200,Roof.y+200,80);
     bob3= new ball(300,Roof.y+200,80);
     bob4= new ball(400,Roof.y+200,80);
-    st1= new  String(Roof,bob1);
-    st2= new  String(Roof,bob2);
-    st3= new  String(Roof,bob3);
-    st4= new  String(Roof,bob4);
+    st1= new  String(Roof.body,bob1.body,5,0);
+    st2= new  String(Roof.body,bob2.body,5,0);
+    st3= new  String(Roof.body,bob3.body,5,0);
+    st4= new  String(Roof.body,bob4.body,5,0);
 }
 
 
