@@ -14,20 +14,20 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-    Roof= new Box(400,350,600,10);
-    bob1= new ball(100,Roof.y+200,80);
-    bob2= new ball(200,Roof.y+200,80);
-    bob3= new ball(300,Roof.y+200,80);
-    bob4= new ball(400,Roof.y+200,80);
-    st1= new  String(Roof.body,bob1.body,5,0);
-    st2= new  String(Roof.body,bob2.body,5,0);
-    st3= new  String(Roof.body,bob3.body,5,0);
-    st4= new  String(Roof.body,bob4.body,5,0);
+    Roof= new Box(380,100,250,10);
+    bob1= new ball(300,300,50);
+    bob2= new ball(350,300,50);
+    bob3= new ball(400,300,50);
+    bob4= new ball(450,300,50);
+    st1= new  String(bob1.body,{x:10,y:-10});
+    st2= new  String(bob2.body,5,0);
+    st3= new  String(bob3.body,5,0);
+    st4= new  String(bob4.body,5,0);
 }
 
 
 function draw() {
-  background(0);
+  background(200);
   Engine.update(engine);
   drawSprites();
   Roof.display();
@@ -41,5 +41,11 @@ function draw() {
   st4.display();
 }
 
+function keyPressed() {
+  if (keyCode === UP_ARROW) {
 
+    Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-12,y:-105});
+  
+  }
+}
 
